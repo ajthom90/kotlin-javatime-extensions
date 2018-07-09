@@ -1,2 +1,3 @@
-# kotlin-javatime-extensions
-Some handy Kotlin extensions for java.time objects
+# Kotlin Extensions for java.time
+
+Some handy Kotlin extensions for java.time classes
