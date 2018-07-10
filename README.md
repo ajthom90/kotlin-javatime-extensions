@@ -21,14 +21,13 @@ And add the following dependency:
 <dependency>
   <groupId>com.andrewthom</groupId>
   <artifactId>kotlin-javatime-extensions</artifactId>
-  <version>0.1</version> <!-- Replace with whatever the current version is -->
+  <version>1.0.1</version> <!-- Replace with whatever the current version is -->
 </dependency>
 ```
 
-### Examples
+## Examples
 
 This library has some basic date functions.  At this time, I have added holidays from the United States.  It can be used in a few different ways:
-
 ```kotlin
 fun calculateHolidays() {
     val localDate = LocalDate.of(2018, 1, 1)
@@ -39,8 +38,7 @@ fun calculateHolidays() {
 }
 ```
 
-The library can also be called from Java if needed
-
+The library can also be called from Java if needed:
 ```java
 import com.andrewthom.kotlin.localdate.HolidayUtils;
 import com.andrewthom.kotlin.localdate.us.UnitedStatesHoliday;
