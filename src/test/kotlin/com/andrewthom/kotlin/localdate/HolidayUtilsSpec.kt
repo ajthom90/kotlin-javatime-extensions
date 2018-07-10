@@ -30,11 +30,14 @@ object AnyHolidaysSpec: Spek({
 					christmas.isAnyOfTheseHolidays(UnitedStatesHoliday.CHRISTMAS_EVE)
 				}
 			}
+			it("should return true even when called through Java") {
+				assertTrue(CallingFromJavaUtils.getAnyOfTheseHolidaysChristmas_ShouldReturnTrue())
+			}
 		}
 		on("Labor Day") {
 			val laborDay = LocalDate.of(2018, 9, 3)
 			it("should return true when the list given includes Labor Day") {
-				assertTrue { laborDay.isAnyOfTheseHolidays(UnitedStatesHoliday.LABOR_DAY) }
+				assertTrue(laborDay.isAnyOfTheseHolidays(UnitedStatesHoliday.LABOR_DAY))
 			}
 		}
 	}

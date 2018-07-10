@@ -4,7 +4,8 @@ import com.andrewthom.kotlin.localdate.Holiday
 import java.time.LocalDate
 
 enum class ChristianHoliday(private val evaluator: (LocalDate) -> Boolean): Holiday {
-	WESTERN_EASTER({ it.isEasterSundayInWesternChristianity() });
+	EASTER_WESTERN_CHRISTIANITY({ it.isEasterSundayInWesternChristianity() }),
+	EASTER_EASTERN_CHRISTIANITY({ it.isEasterSundayInEasternChristianity() });
 
 	override fun evaluate(localDate: LocalDate): Boolean {
 		return evaluator(localDate)
