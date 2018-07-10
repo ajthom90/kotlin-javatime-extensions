@@ -1,6 +1,5 @@
 package com.andrewthom.kotlin.localdate.us
 
-import com.sun.org.apache.xpath.internal.operations.Bool
 import java.time.DayOfWeek
 import java.time.LocalDate
 import java.time.Month
@@ -75,6 +74,11 @@ fun LocalDate.isMemorialDay(): Boolean {
  * Returns true if the date is Labor Day in the US
  */
 fun LocalDate.isLaborDay(): Boolean {
-	val laborDay = LocalDate.of(2018, Month.SEPTEMBER, 1).with(TemporalAdjusters.dayOfWeekInMonth(1, DayOfWeek.MONDAY))
+	val laborDay = LocalDate.of(this.year, Month.SEPTEMBER, 1).with(TemporalAdjusters.dayOfWeekInMonth(1, DayOfWeek.MONDAY))
 	return this == laborDay
 }
+
+/**
+ * Returns if the date is Kwanzaa in the US
+ */
+fun LocalDate.isKwanzaa() = dayOfMonth == 26 && month == Month.DECEMBER
