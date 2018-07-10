@@ -2,7 +2,7 @@
 
 Some handy Kotlin extensions for java.time classes
 
-[![Release](https://jitpack.io/v/com.andrewthom/spring-security-login-logger.svg)](https://jitpack.io/#com.andrewthom/spring-security-login-logger)
+[![Release](https://jitpack.io/v/com.andrewthom/kotlin-javatime-extensions.svg)](https://jitpack.io/#com.andrewthom/spring-security-login-logger)
 
 To use, add the following repository to your Maven configuration: 
 
