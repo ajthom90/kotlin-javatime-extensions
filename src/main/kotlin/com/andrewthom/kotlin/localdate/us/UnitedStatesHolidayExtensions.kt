@@ -82,3 +82,24 @@ fun LocalDate.isLaborDay(): Boolean {
  * Returns if the date is Kwanzaa in the US
  */
 fun LocalDate.isKwanzaa() = dayOfMonth == 26 && month == Month.DECEMBER
+
+/**
+ * Returns true if the date is the traditional November Election Day in the USA.
+ *
+ * General election day in the US is traditionally the first Tuesday after the first Monday of November, and can range
+ * from November 2-8.
+ */
+fun LocalDate.isElectionDayUS(): Boolean {
+	val firstTuesday = LocalDate.of(this.year, Month.NOVEMBER, 1).with(TemporalAdjusters.dayOfWeekInMonth(1, DayOfWeek.TUESDAY))
+	val electionDay = if (firstTuesday.dayOfMonth == 1) {
+		firstTuesday.plusWeeks(1)
+	} else {
+		firstTuesday
+	}
+	return this == electionDay
+}
+
+/**
+ * Returns true if the date is Veterans Day in the USA (November 11)
+ */
+fun LocalDate.isVeteransDayUS() = this.month == Month.NOVEMBER && this.dayOfMonth == 11

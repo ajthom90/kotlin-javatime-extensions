@@ -6,6 +6,8 @@ import org.jetbrains.spek.api.dsl.it
 import org.jetbrains.spek.api.dsl.on
 import java.time.LocalDate
 import kotlin.test.assertEquals
+import kotlin.test.assertFalse
+import kotlin.test.assertTrue
 
 object ThanksgivingSpec: Spek({
 	given("a date") {
@@ -102,6 +104,23 @@ object MLKSpec: Spek({
 			it("should be false") {
 				assertEquals(false, christmas.isMartinLutherKingJrDay())
 			}
+		}
+	}
+})
+
+object ElectionDaySpec: Spek({
+	given("a date") {
+		on("checking Election Day") {
+			val electionDay = LocalDate.of(2016, 11, 8)
+			it("should be true") { assertTrue { electionDay.isElectionDayUS() } }
+		}
+		on("a day that isn't election day") {
+			val notElectionDay = LocalDate.of(2016, 11, 9)
+			it("should be false") { assertFalse { notElectionDay.isElectionDayUS() } }
+		}
+		on("election day 2018") {
+			val electionDay = LocalDate.of(2018, 11, 6)
+			it("should be true") { assertTrue { electionDay.isElectionDayUS() } }
 		}
 	}
 })

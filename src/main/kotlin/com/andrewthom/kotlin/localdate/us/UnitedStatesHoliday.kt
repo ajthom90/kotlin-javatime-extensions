@@ -13,7 +13,8 @@ enum class UnitedStatesHoliday(private val evaluator: (LocalDate) -> Boolean): H
 	DAY_AFTER_THANKSGIVING({ it.isDayAfterThanksgiving() }),
 	CHRISTMAS_EVE({ it.isChristmasEve() }),
 	CHRISTMAS_DAY({ it.isChristmasDay() }),
-	KWANZAA({ it.isKwanzaa() });
+	KWANZAA({ it.isKwanzaa() }),
+	ELECTION_DAY({ it.isElectionDayUS() });
 
 	override fun evaluate(localDate: LocalDate): Boolean {
 		return evaluator(localDate)
